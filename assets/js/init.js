@@ -1,13 +1,14 @@
 (function ($) {
   "use strict";
   $(document).ready(function () {
-    $(".home-slider").slick({
-      dots: true,
-      infinite: true,
-      speed: 300,
-      slidesToShow: 1,
-      adaptiveHeight: true,
+    $(".product-menu li a").on("click", function () {
+      var selector = $(this).attr("data-filler");
+
+      $(".product-list").isotope({
+        filter: selector,
+      });
     });
+    $(".product-list").isotope({});
   });
   window.addEventListener("scroll", function () {
     var header = document.querySelector("header");
